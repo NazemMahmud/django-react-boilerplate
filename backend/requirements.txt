@@ -1,0 +1,3 @@
+# content of backend/requirements.txt
+django==3.2.4
+# this will automatic install: asgiref-3.3.4 pytz-2021.1 sqlparse-0.4.1 typing-extensions-3.10.0.0 
