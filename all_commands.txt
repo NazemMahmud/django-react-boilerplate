@@ -1,0 +1,24 @@
+# Create main project directory
+cd django-react-boilerplate
+mkdir backend
+cd backend
+
+# Create virtual environment
+pip install virtualenv (install package)
+py -m virtualenv env (create virtual env.)
+source env/Scripts/activate (actiavte env.)
+
+# django 
+pip install django
+# content of backend/requirements.txt
+django==3.1.2
+django-admin startproject server
+cd server 
+# run development server
+python manage.py runserver
+
+# frontend:
+create-react-app frontend
+cd frontend
+npm install react-bootstrap bootstrap react-router-dom
+npm install redux react-redux redux-thunk connected-react-router
