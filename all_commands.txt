@@ -22,3 +22,14 @@ create-react-app frontend
 cd frontend
 npm install react-bootstrap bootstrap react-router-dom
 npm install redux react-redux redux-thunk connected-react-router
+
+# For django rest framework
+pip install djangorestframework markdown django-filter # [these are default]
+pip install djoser
+
+# in backend/server directory where manage.py is:
+django-admin startapp accounts
+# inside accounts startapp directory
+mkdir apps # this to keep all applications in it. It helps to keep the whole project well organized.
+in settings.py, add 'apps.accounts' in INSTALLED_APPS list
+pip install mysqlclient # for MySQL
