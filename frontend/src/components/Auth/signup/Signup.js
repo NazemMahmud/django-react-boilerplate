@@ -1,8 +1,12 @@
 import React, {useState} from "react";
 import { Container, Form, FormControl, Row, Col, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
+import { connect } from "react-redux";
+import PropTypes from "prop-types"; 
+import { signupNewUser } from "./SignupActions";
 
 function Signup(props) {
+  console.log("props: => ", props);
     const [formData, setFormData] = useState({
         username: "",
         password: ""
@@ -21,7 +25,8 @@ function Signup(props) {
           username: formData.username,
           password: formData.password
         };
-        console.log("Sign up " + userData.username + " " + userData.password);
+        console.log("INNNN props: => ", props);
+        props.signupNewUser(userData);
     };
     
     return (
@@ -67,4 +72,15 @@ function Signup(props) {
     );
 }
 
-export default Signup;
+Signup.propTypes = {
+  signupNewUser: PropTypes.func.isRequired,
+  createUser: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+  createUser: state.createUser
+});
+
+export default connect(mapStateToProps, {
+  signupNewUser
+})(withRouter(Signup));

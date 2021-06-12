@@ -26,6 +26,7 @@ npm install redux react-redux redux-thunk connected-react-router
 # For django rest framework
 pip install djangorestframework markdown django-filter # [these are default]
 pip install djoser
+pip install django-cors-headers
 
 # in backend/server directory where manage.py is:
 django-admin startapp accounts
@@ -33,3 +34,6 @@ django-admin startapp accounts
 mkdir apps # this to keep all applications in it. It helps to keep the whole project well organized.
 in settings.py, add 'apps.accounts' in INSTALLED_APPS list
 pip install mysqlclient # for MySQL
+
+#front end package:
+npm i axios react-toastify

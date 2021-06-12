@@ -1,6 +1,9 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter  } from "react-router-dom";
 import { Container, Button, Row, Col, Form, FormControl } from "react-bootstrap";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { login } from "./LoginActions.js"; 
 
 function Login(props) {
     const [formData, setFormData] = useState({
@@ -21,6 +24,7 @@ function Login(props) {
           password: formData.password
         };
         console.log("Login " + userData.username + " " + userData.password);
+        props.login(userData, "/dashboard");
     };
     
     return (
@@ -63,4 +67,15 @@ function Login(props) {
     );
 }
 
-export default Login;
+Login.propTypes = {
+    login: PropTypes.func.isRequired,
+    auth: PropTypes.object.isRequired
+};
+  
+const mapStateToProps = state => ({
+    auth: state.auth
+});
+  
+export default connect(mapStateToProps, {
+    login
+})(withRouter(Login));

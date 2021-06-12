@@ -1,10 +1,14 @@
 import './App.css';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./components/Home";
-import Signup from './components/Auth/Signup';
-import Login from './components/Auth/Login';
+import Signup from './components/Auth/signup/Signup';
+import Login from './components/Auth/login/Login';
 import Dashboard from './components/dashboard/Dashboard';
 import Root from './redux/Root';
+import { ToastContainer } from "react-toastify";
+import axios from "axios";
+
+axios.defaults.baseURL = "http://127.0.0.1:8000";
 
 function App() {
   return (
@@ -19,6 +23,7 @@ function App() {
         </Switch>
       </Root>
       {/* </BrowserRouter> */}
+      <ToastContainer hideProgressBar={true} newestOnTop={true} />
     </div>
   );
 }
