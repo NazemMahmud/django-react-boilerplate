@@ -6,7 +6,6 @@ import PropTypes from "prop-types";
 import { signupNewUser } from "./SignupActions";
 
 function Signup(props) {
-  console.log("props: => ", props);
     const [formData, setFormData] = useState({
         username: "",
         password: ""
@@ -25,7 +24,6 @@ function Signup(props) {
           username: formData.username,
           password: formData.password
         };
-        console.log("INNNN props: => ", props);
         props.signupNewUser(userData);
     };
     

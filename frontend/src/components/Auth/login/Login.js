@@ -23,7 +23,6 @@ function Login(props) {
           username: formData.username,
           password: formData.password
         };
-        console.log("Login " + userData.username + " " + userData.password);
         props.login(userData, "/dashboard");
     };
     

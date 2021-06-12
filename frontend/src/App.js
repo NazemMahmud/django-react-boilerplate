@@ -7,6 +7,7 @@ import Dashboard from './components/dashboard/Dashboard';
 import Root from './redux/Root';
 import { ToastContainer } from "react-toastify";
 import axios from "axios";
+import RequireAuth from "./utils/RequireAuth";
 
 axios.defaults.baseURL = "http://127.0.0.1:8000";
 
@@ -18,7 +19,8 @@ function App() {
         <Switch>
           <Route path="/signup" component={Signup} />
           <Route path="/login" component={Login} />
-          <Route path="/dashboard" component={Dashboard} />
+          {/* {requireAuth(Dashboard)} */}
+          <Route path="/dashboard" component={() => <RequireAuth component={Dashboard} />} />
           <Route exact path="/" component={Home} />
         </Switch>
       </Root>
