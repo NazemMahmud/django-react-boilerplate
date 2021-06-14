@@ -37,3 +37,7 @@ pip install mysqlclient # for MySQL
 
 #front end package:
 npm i axios react-toastify
+
+# Now create another app in application directory
+mkdir applications/notes # at first need to create that directory for custom path; otherwise command error
+django-admin startapp notes ./applications/notes # . means current directory, i m creating from server directory

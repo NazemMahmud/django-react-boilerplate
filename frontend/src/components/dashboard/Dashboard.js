@@ -7,6 +7,9 @@ import { Container, Navbar, Nav  } from "react-bootstrap";
 
 import { logout } from "../Auth/login/LoginActions";
 
+import NotesList from "../notes/NotesList";
+import AddNote from "../notes/AddNote";
+
 function Dashboard(props) {
     const onLogout = () => {
         props.logout();
@@ -28,6 +31,8 @@ function Dashboard(props) {
             </Navbar>
             <Container>
                 <h1>Dashboard hi!!!!!</h1>
+                <NotesList />
+                <AddNote />
             </Container>
         </div>
     );
