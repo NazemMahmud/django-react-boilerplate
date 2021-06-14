@@ -1,0 +1,26 @@
+base_url: http://127.0.0.1:8000/
+base: {{base_url}}api/v1
+#djoser:
+/users/
+/users/me/
+/users/confirm/
+/users/resend_activation/
+/users/set_password/
+/users/reset_password/
+/users/reset_password_confirm/
+/users/set_username/
+/users/reset_username/
+/users/reset_username_confirm/
+/token/login/ (Token Based Authentication) POST
+/token/logout/ (Token Based Authentication)
+/jwt/create/ (JSON Web Token Authentication) // not used
+/jwt/refresh/ (JSON Web Token Authentication) // not used
+/jwt/verify/ (JSON Web Token Authentication) // not used
+
+#Note
+GET list of notes: /notes,
+GET one note with id: /notes/1/ (for id = 1),
+POST: create new note,  /notes/ with JSON containing content field,
+DELETE: delete note /notes/1/ (for id = 1),
+PATCH: partial note update /notes/1/ (for id = 1),
+PUT: full note update /notes/1/ (for id = 1).

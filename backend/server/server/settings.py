@@ -42,9 +42,10 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'djoser',
-	'corsheaders',
+    'corsheaders',
     # user defined apps
-    'applications.accounts'
+    'applications.accounts',
+    'applications.notes',
 ]
 
 # define which origins are allowed
